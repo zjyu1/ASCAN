@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F7E7C2F7-2EAD-4991-ACD4-F02B06C42BAA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ascan</RootNamespace>
+    <AssemblyName>Ascan</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\MySQL\Connector.NET 6.9\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TeeChart, Version=2.0.2652.22324, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BeamFile\beamFile.cs" />
+    <Compile Include="BeamFile\couplingInspection.cs" />
+    <Compile Include="BeamFile\CrystalArrayData.cs" />
+    <Compile Include="BeamFile\GrooveV.cs" />
+    <Compile Include="BeamFile\INIOperation.cs" />
+    <Compile Include="BeamFile\Para.cs" />
+    <Compile Include="BeamFile\pipeCalFunction.cs" />
+    <Compile Include="BeamFile\TestBeamFile\BinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeamFile\TestBeamFile\BinForm.designer.cs">
+      <DependentUpon>BinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeamFile\TestBeamFile\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeamFile\TestBeamFile\Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeamFile\TestBeamFile\FormDelays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeamFile\TestBeamFile\FormDelays.Designer.cs">
+      <DependentUpon>FormDelays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeamFile\wavePath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeamFile\wavePath.Designer.cs">
+      <DependentUpon>wavePath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeamFile\WedgeData.cs" />
+    <Compile Include="CalFocal\UTGroove.cs" />
+    <Compile Include="CalFocal\UTPosition.cs" />
+    <Compile Include="CalFocal\UTProbe.cs" />
+    <Compile Include="CalFocal\UTWedge.cs" />
+    <Compile Include="Comfig\Config.cs" />
+    <Compile Include="FocusLaw\FormGateSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FocusLaw\FormGateSetting.designer.cs">
+      <DependentUpon>FormGateSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBoot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBoot.Designer.cs">
+      <DependentUpon>FormBoot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetectionMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetectionMode.Designer.cs">
+      <DependentUpon>FormDetectionMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMotion.Designer.cs">
+      <DependentUpon>FormMotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRecordFigure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecordFigure.Designer.cs">
+      <DependentUpon>FormRecordFigure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSscan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSscan.Designer.cs">
+      <DependentUpon>FormSscan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeasureLine.cs" />
+    <Compile Include="Motion\ComProc.cs" />
+    <Compile Include="DaqAttrType\AscanData\AscanDataAttrType.cs" />
+    <Compile Include="DaqAttrType\AscanData\AscanDataEnum.cs" />
+    <Compile Include="DaqAttrType\AscanData\InitAscanDataAttrType.cs" />
+    <Compile Include="DaqAttrType\AscanData\ParseAscanDataXml.cs" />
+    <Compile Include="DaqAttrType\AscanVideo\AscanVideoAttrType.cs" />
+    <Compile Include="DaqAttrType\AscanVideo\AscanVideoEnum.cs" />
+    <Compile Include="DaqAttrType\AscanVideo\InitAscanVideoAttrType.cs" />
+    <Compile Include="DaqAttrType\AscanVideo\PareAscanVideoXml.cs" />
+    <Compile Include="DaqAttrType\BackEcho\BackEchoAttrType.cs" />
+    <Compile Include="DaqAttrType\BackEcho\BackEchoEnum.cs" />
+    <Compile Include="DaqAttrType\BackEcho\InitBackEchoAttrType.cs" />
+    <Compile Include="DaqAttrType\BackEcho\ParseBackEchoXml.cs" />
+    <Compile Include="DaqAttrType\CaptureMethod\CaptureMethodAttrType.cs" />
+    <Compile Include="DaqAttrType\CaptureMethod\CaptureMethodEnum.cs" />
+    <Compile Include="DaqAttrType\CaptureMethod\InitCaptureMethodAttrType.cs" />
+    <Compile Include="DaqAttrType\CaptureMethod\ParseCaptureMethodXml.cs" />
+    <Compile Include="DaqAttrType\DAC\DACAttrType.cs" />
+    <Compile Include="DaqAttrType\DAC\DACEnum.cs" />
+    <Compile Include="DaqAttrType\DAC\InitDACAttrType.cs" />
+    <Compile Include="DaqAttrType\DAC\ParseDACXml.cs" />
+    <Compile Include="DaqAttrType\DoubleGate\DoubleGateAttrType.cs" />
+    <Compile Include="DaqAttrType\DoubleGate\DoubleGateEnum.cs" />
+    <Compile Include="DaqAttrType\DoubleGate\InitDoubleGateAttrType.cs" />
+    <Compile Include="DaqAttrType\DoubleGate\ParseDGateXml.cs" />
+    <Compile Include="DaqAttrType\EnvelopData\EnvelopDataAttrType.cs" />
+    <Compile Include="DaqAttrType\EnvelopData\InitEnvelopDataAttrType.cs" />
+    <Compile Include="DaqAttrType\EnvelopData\ParseEnvelopDataXml.cs" />
+    <Compile Include="DaqAttrType\Gate\GateEnum.cs" />
+    <Compile Include="DaqAttrType\GlobalControl\GlobalCtrlEnum.cs" />
+    <Compile Include="DaqAttrType\GlobalControl\GlobalCtrlAttrType.cs" />
+    <Compile Include="DaqAttrType\GlobalControl\InitGlobalCtrlAttrType.cs" />
+    <Compile Include="DaqAttrType\GlobalControl\ParseGlobalCtrlXml.cs" />
+    <Compile Include="DaqAttrType\InLine\InitInLineAttrType.cs" />
+    <Compile Include="DaqAttrType\InLine\InLineAttrType.cs" />
+    <Compile Include="DaqAttrType\InLine\InLineEnum.cs" />
+    <Compile Include="DaqAttrType\InLine\ParseInLineXml.cs" />
+    <Compile Include="DaqAttrType\Interface\InitInterfaceAttrType.cs" />
+    <Compile Include="DaqAttrType\Interface\InterfaceAttrType.cs" />
+    <Compile Include="DaqAttrType\Interface\InterfaceEnum.cs" />
+    <Compile Include="DaqAttrType\Interface\ParseInterfaceXml.cs" />
+    <Compile Include="DaqAttrType\LEDStatus\InitLEDStatusAttrType.cs" />
+    <Compile Include="DaqAttrType\LEDStatus\LEDStatusAttrType.cs" />
+    <Compile Include="DaqAttrType\LEDStatus\LEDStatusEnum.cs" />
+    <Compile Include="DaqAttrType\LEDStatus\ParseLEDStatusXml.cs" />
+    <Compile Include="DaqAttrType\MaterialVelocity\InitMatVelocityAttrType.cs" />
+    <Compile Include="DaqAttrType\MaterialVelocity\MatVelocityAttrType.cs" />
+    <Compile Include="DaqAttrType\MaterialVelocity\ParseMatVelocityXml.cs" />
+    <Compile Include="DaqAttrType\Measurement\InitMeasurementAttrType.cs" />
+    <Compile Include="DaqAttrType\Measurement\MeasurementAttrType.cs" />
+    <Compile Include="DaqAttrType\Measurement\MeasurementEnum.cs" />
+    <Compile Include="DaqAttrType\Measurement\ParseMeasurementXml.cs" />
+    <Compile Include="DaqAttrType\OutLine\InitOutLineAttrType.cs" />
+    <Compile Include="DaqAttrType\OutLine\OutLineAttrType.cs" />
+    <Compile Include="DaqAttrType\OutLine\OutLineEnum.cs" />
+    <Compile Include="DaqAttrType\OutLine\ParseOutLineXml.cs" />
+    <Compile Include="DaqAttrType\PA\InitPAAttrType.cs" />
+    <Compile Include="DaqAttrType\PA\PAAttrType.cs" />
+    <Compile Include="DaqAttrType\PA\PAEnum.cs" />
+    <Compile Include="DaqAttrType\PA\ParsePAXml.cs" />
+    <Compile Include="DaqAttrType\PCI\InitPCIAttrType.cs" />
+    <Compile Include="DaqAttrType\PCI\ParsePCIXml.cs" />
+    <Compile Include="DaqAttrType\PCI\PCIAttrType.cs" />
+    <Compile Include="DaqAttrType\PCI\PCIEnum.cs" />
+    <Compile Include="DaqAttrType\PluserModule\InitPluserModuleAttrType.cs" />
+    <Compile Include="DaqAttrType\PluserModule\ParsePluserModuleXml.cs" />
+    <Compile Include="DaqAttrType\PluserModule\PluserModuleAttrType.cs" />
+    <Compile Include="DaqAttrType\PluserModule\PluserModuleEnum.cs" />
+    <Compile Include="DaqAttrType\PluserTransmit\InitPulserTransmitAttrType.cs" />
+    <Compile Include="DaqAttrType\PluserTransmit\ParsePulserTransmitXml.cs" />
+    <Compile Include="DaqAttrType\PluserTransmit\PulserTranmitAttrType.cs" />
+    <Compile Include="DaqAttrType\PluserTransmit\PulserTransmitEnum.cs" />
+    <Compile Include="DaqAttrType\PosTrigger\InitPosTriggerAttrType.cs" />
+    <Compile Include="DaqAttrType\PosTrigger\ParsePosTriggerXml.cs" />
+    <Compile Include="DaqAttrType\PosTrigger\PosTriggerAttrType.cs" />
+    <Compile Include="DaqAttrType\PosTrigger\PosTriggerEnum.cs" />
+    <Compile Include="DaqAttrType\Power\InitPowerAttrType.cs" />
+    <Compile Include="DaqAttrType\Power\ParsePowerXml.cs" />
+    <Compile Include="DaqAttrType\Power\PowerAttrType.cs" />
+    <Compile Include="DaqAttrType\Power\PowerEnum.cs" />
+    <Compile Include="DaqAttrType\RealTimeData\InitRealTimeDataAttrType.cs" />
+    <Compile Include="DaqAttrType\RealTimeData\ParseRealTimeDataXml.cs" />
+    <Compile Include="DaqAttrType\RealTimeData\RealTimeDataAttrType.cs" />
+    <Compile Include="DaqAttrType\Receiver\InitReceiverAttrType.cs" />
+    <Compile Include="DaqAttrType\Receiver\ParseReceiverAttrType.cs" />
+    <Compile Include="DaqAttrType\Receiver\ReceiverEnum.cs" />
+    <Compile Include="DaqAttrType\Receiver\ReceiverAttrType.cs" />
+    <Compile Include="DaqAttrType\StatusIndicator\InitStatusIndicatorAttrType.cs" />
+    <Compile Include="DaqAttrType\StatusIndicator\ParseStatusIndicatorXml.cs" />
+    <Compile Include="DaqAttrType\StatusIndicator\StatusIndicatorAttrType.cs" />
+    <Compile Include="DaqAttrType\StatusIndicator\StatusIndicatorEnum.cs" />
+    <Compile Include="DaqAttrType\Tesout\InitTesoutAttrType.cs" />
+    <Compile Include="DaqAttrType\Tesout\ParseTesoutXml.cs" />
+    <Compile Include="DaqAttrType\Tesout\TesoutAttrType.cs" />
+    <Compile Include="DaqAttrType\Tesout\TesoutEnum.cs" />
+    <Compile Include="DaqAttrType\Unit\InitUnitAttrType.cs" />
+    <Compile Include="DaqAttrType\Unit\ParseUnitXml.cs" />
+    <Compile Include="DaqAttrType\Unit\UintEnum.cs" />
+    <Compile Include="DaqAttrType\Unit\UnitAttrType.cs" />
+    <Compile Include="Motion\ECAN.cs" />
+    <Compile Include="FocusLaw\AutoSet.cs" />
+    <Compile Include="FocusLaw\BeamPara.cs" />
+    <Compile Include="FocusLaw\ClassChanpara.cs" />
+    <Compile Include="FocusLaw\ClassCoupledelay.cs" />
+    <Compile Include="FocusLaw\Draw.cs" />
+    <Compile Include="FocusLaw\FormFocus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FocusLaw\FormFocus.designer.cs">
+      <DependentUpon>FormFocus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FocusLaw\FormModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FocusLaw\FormModify.designer.cs">
+      <DependentUpon>FormModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConditioningParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConditioningParameters.Designer.cs">
+      <DependentUpon>FormConditioningParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGateInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGateInfo.Designer.cs">
+      <DependentUpon>FormGateInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLaunchParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLaunchParameters.Designer.cs">
+      <DependentUpon>FormLaunchParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoadPara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoadPara.Designer.cs">
+      <DependentUpon>FormLoadPara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMerge\FormMeasurementMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMerge\FormMeasurementMap.designer.cs">
+      <DependentUpon>FormMeasurementMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMerge\MapPoints.cs" />
+    <Compile Include="FormMerge\MeasurementSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMerge\MeasurementSet.designer.cs">
+      <DependentUpon>MeasurementSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMerge\TchartSeries.cs" />
+    <Compile Include="FormSavePara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSavePara.Designer.cs">
+      <DependentUpon>FormSavePara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSessionsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSessionsList.Designer.cs">
+      <DependentUpon>FormSessionsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTriggerMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTriggerMode.Designer.cs">
+      <DependentUpon>FormTriggerMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="FormDAC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDAC.Designer.cs">
+      <DependentUpon>FormDAC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGatePosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGatePosition.Designer.cs">
+      <DependentUpon>FormGatePosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMDAC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMDAC.Designer.cs">
+      <DependentUpon>FormMDAC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProbeDelay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProbeDelay.Designer.cs">
+      <DependentUpon>FormProbeDelay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormToranceMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormToranceMonitor.Designer.cs">
+      <DependentUpon>FormToranceMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DaqAttrType\DAQ_ATTR_TYPE.cs" />
+    <Compile Include="DaqAttrType\Gate\InitGateAttrType.cs" />
+    <Compile Include="DaqAttrType\Gate\ParseGateXml.cs" />
+    <Compile Include="DaqAttrType\StartAddr\InitStartAddrAttrType.cs" />
+    <Compile Include="Comfig\Gate\GateXml.cs" />
+    <Compile Include="Comfig\Gate\LoadGate.cs" />
+    <Compile Include="Comfig\Gate\SaveGate.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMaterialVelocity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaterialVelocity.Designer.cs">
+      <DependentUpon>FormMaterialVelocity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIChild.Designer.cs">
+      <DependentUpon>MDIChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Motion\Motion.cs" />
+    <Compile Include="PDAQ\AscanVideoDAQ\GetAsacnVideoDAQ.cs" />
+    <Compile Include="PDAQ\AscanVideoDAQ\SetAscanVideoDAQ.cs" />
+    <Compile Include="PDAQ\BatchSetDAQ\SetBatchDAQ.cs" />
+    <Compile Include="PDAQ\DACDAQ\GetDACDAQ.cs" />
+    <Compile Include="PDAQ\DACDAQ\SetDACDAQ.cs" />
+    <Compile Include="PDAQ\DaqStruct.cs" />
+    <Compile Include="PDAQ\DGateDAQ\GetDGateDAQ.cs" />
+    <Compile Include="PDAQ\DGateDAQ\SetDGateDAQ.cs" />
+    <Compile Include="PDAQ\ErrPDAQ.cs" />
+    <Compile Include="PDAQ\GateDAQ\GetGateDAQ.cs" />
+    <Compile Include="PDAQ\GateDAQ\SetGateDAQ.cs" />
+    <Compile Include="PDAQ\GlobalControlDAQ\GetGlobalControlDAQ.cs" />
+    <Compile Include="PDAQ\GlobalControlDAQ\SetGlobalControlDAQ.cs" />
+    <Compile Include="PDAQ\MaterialVelocityDAQ\GetMaterialVelocityDAQ.cs" />
+    <Compile Include="PDAQ\MaterialVelocityDAQ\SetMaterialVelocityDAQ.cs" />
+    <Compile Include="PDAQ\BeamFileDAQ\SetPADAQ.cs" />
+    <Compile Include="PDAQ\PulserTransmitDAQ\GetPulserTransmitDAQ.cs" />
+    <Compile Include="PDAQ\PulserTransmitDAQ\SetPulserTransmitDAQ.cs" />
+    <Compile Include="PDAQ\ReceiverDAQ\GetReceiverDAQ.cs" />
+    <Compile Include="PDAQ\ReceiverDAQ\SetReceiverDAQ.cs" />
+    <Compile Include="Product\AddDefectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\AddDefectDialog.designer.cs">
+      <DependentUpon>AddDefectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\FormProbe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\FormProbe.designer.cs">
+      <DependentUpon>FormProbe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\FormProduct.designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\FormWedge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\FormWedge.designer.cs">
+      <DependentUpon>FormWedge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\PictureDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\PictureDialog.designer.cs">
+      <DependentUpon>PictureDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Product.cs" />
+    <Compile Include="Product\SaveDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\SaveDialog.Designer.cs">
+      <DependentUpon>SaveDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queue\CaptureOutQueueElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Queue\MergeOutQueueElement.cs" />
+    <Compile Include="Queue\ParserOutQueueElement.cs" />
+    <Compile Include="Queue\QueueInfo.cs" />
+    <Compile Include="TestStrip\FormTestStrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestStrip\FormTestStrip.Designer.cs">
+      <DependentUpon>FormTestStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Thread\CaptureThread.cs" />
+    <Compile Include="Thread\GlobalQuit.cs" />
+    <Compile Include="Thread\MeasureUIThread.cs" />
+    <Compile Include="Thread\MergeThread.cs" />
+    <Compile Include="Thread\ParseThread.cs" />
+    <Compile Include="Thread\ThreadManager.cs" />
+    <Compile Include="Thread\ThreadHandClasp.cs" />
+    <Compile Include="Thread\AscanUIThread.cs" />
+    <Compile Include="ToolConfig\DelegateAction.cs" />
+    <Compile Include="ToolConfig\File.cs" />
+    <Compile Include="ToolConfig\FormSelecting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolConfig\FormSelecting.Designer.cs">
+      <DependentUpon>FormSelecting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolConfig\FormWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolConfig\FormWarning.designer.cs">
+      <DependentUpon>FormWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDAQ\GetPDAQ.cs" />
+    <Compile Include="ToolConfig\LogHelper.cs" />
+    <Compile Include="ToolConfig\MultiLanguage.cs" />
+    <Compile Include="PDAQ\PDAQ.cs" />
+    <Compile Include="PDAQ\SetPDAQ.cs" />
+    <Compile Include="DaqAttrType\Gate\GateAttrType.cs" />
+    <Compile Include="ToolConfig\XmlConfig.cs" />
+    <EmbeddedResource Include="BeamFile\TestBeamFile\BinForm.resx">
+      <DependentUpon>BinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BeamFile\TestBeamFile\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BeamFile\TestBeamFile\FormDelays.resx">
+      <DependentUpon>FormDelays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BeamFile\wavePath.resx">
+      <DependentUpon>wavePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FocusLaw\FormFocus.resx">
+      <DependentUpon>FormFocus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FocusLaw\FormGateSetting.resx">
+      <DependentUpon>FormGateSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FocusLaw\FormModify.resx">
+      <DependentUpon>FormModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBoot.resx">
+      <DependentUpon>FormBoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConditioningParameters.resx">
+      <DependentUpon>FormConditioningParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDAC.resx">
+      <DependentUpon>FormDAC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetectionMode.resx">
+      <DependentUpon>FormDetectionMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGateInfo.resx">
+      <DependentUpon>FormGateInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGatePosition.resx">
+      <DependentUpon>FormGatePosition.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLaunchParameters.resx">
+      <DependentUpon>FormLaunchParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoadPara.resx">
+      <DependentUpon>FormLoadPara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMDAC.resx">
+      <DependentUpon>FormMDAC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMerge\FormMeasurementMap.resx">
+      <DependentUpon>FormMeasurementMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMerge\MeasurementSet.resx">
+      <DependentUpon>MeasurementSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMotion.resx">
+      <DependentUpon>FormMotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProbeDelay.resx">
+      <DependentUpon>FormProbeDelay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecordFigure.resx">
+      <DependentUpon>FormRecordFigure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSavePara.resx">
+      <DependentUpon>FormSavePara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSessionsList.resx">
+      <DependentUpon>FormSessionsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSscan.resx">
+      <DependentUpon>FormSscan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormToranceMonitor.resx">
+      <DependentUpon>FormToranceMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTriggerMode.resx">
+      <DependentUpon>FormTriggerMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaterialVelocity.resx">
+      <DependentUpon>FormMaterialVelocity.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIChild.resx">
+      <DependentUpon>MDIChild.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\AddDefectDialog.resx">
+      <DependentUpon>AddDefectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\FormProbe.resx">
+      <DependentUpon>FormProbe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\FormWedge.resx">
+      <DependentUpon>FormWedge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\PictureDialog.resx">
+      <DependentUpon>PictureDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\SaveDialog.resx">
+      <DependentUpon>SaveDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TestStrip\FormTestStrip.resx">
+      <DependentUpon>FormTestStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolConfig\FormSelecting.resx">
+      <DependentUpon>FormSelecting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolConfig\FormWarning.resx">
+      <DependentUpon>FormWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="FocusLaw\聚焦法则.docx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disconnect.jpg" />
+    <None Include="Resources\Connect.jpg" />
+    <None Include="Resources\Connect.bmp" />
+    <None Include="Resources\colorBar.jpg" />
+    <None Include="Resources\chang.jpg" />
+    <None Include="Resources\banner160905_meitu_2.jpg" />
+    <None Include="Resources\banner0619-1.jpg" />
+    <Content Include="Resources\CRC.png" />
+    <None Include="Resources\CRCGroove.jpg" />
+    <Content Include="Resources\CrystalPara.png" />
+    <Content Include="Resources\Edit.ico" />
+    <Content Include="Resources\InspectionSketchCRC.png" />
+    <Content Include="Resources\InspectionSketchCRC1.png" />
+    <Content Include="Resources\InspectionSketchPipe.png" />
+    <Content Include="Resources\InspectionSketchPipe1.png" />
+    <Content Include="Resources\InspectionSketchV.png" />
+    <Content Include="Resources\InspectionSketchV1.png" />
+    <Content Include="Resources\InspectionSketchX.png" />
+    <Content Include="Resources\Pipe.png" />
+    <Content Include="Resources\Pipe1.png" />
+    <Content Include="Resources\ProbePara.png" />
+    <Content Include="Resources\Save.ico" />
+    <Content Include="Resources\Setting.ico" />
+    <Content Include="Resources\TOFD.png" />
+    <Content Include="Resources\V.png" />
+    <None Include="Resources\VGroove.jpg" />
+    <Content Include="Resources\WedgeSketch.png" />
+    <Content Include="Resources\X.png" />
+    <None Include="Resources\XGroove.jpg" />
+    <None Include="Resources\xiang.jpg" />
+    <Content Include="Resources\图标 %2816%29.ico" />
+    <Content Include="Resources\图标 %28220%29.ico" />
+    <Content Include="Resources\图标 %2868%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\autsql\autsql\autsql.csproj">
+      <Project>{3B467BAC-2768-4FC2-A003-FE9D0183F8D8}</Project>
+      <Name>autsql</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B88BAE5-CC78-4148-B8DD-355B53E8B966}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AUT</RootNamespace>
+    <AssemblyName>AUT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TeeChart, Version=2.0.2652.22324, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\TeeChart.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DateService.cs" />
+    <Compile Include="FormAUT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAUT.Designer.cs">
+      <DependentUpon>FormAUT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCalibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCalibration.Designer.cs">
+      <DependentUpon>FormCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCalibResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCalibResult.Designer.cs">
+      <DependentUpon>FormCalibResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport\FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport\FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport\WordFunction.cs" />
+    <Compile Include="FormStripMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStripMap.Designer.cs">
+      <DependentUpon>FormStripMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStripSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStripSet.Designer.cs">
+      <DependentUpon>FormStripSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapPoints.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Image.cs" />
+    <Compile Include="TchartSeries.cs" />
+    <EmbeddedResource Include="FormAUT.resx">
+      <DependentUpon>FormAUT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCalibration.resx">
+      <DependentUpon>FormCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCalibResult.resx">
+      <DependentUpon>FormCalibResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReport\FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStripMap.resx">
+      <DependentUpon>FormStripMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStripSet.resx">
+      <DependentUpon>FormStripSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ascan\Ascan.csproj">
+      <Project>{F7E7C2F7-2EAD-4991-ACD4-F02B06C42BAA}</Project>
+      <Name>Ascan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\autsql\autsql\autsql.csproj">
+      <Project>{3B467BAC-2768-4FC2-A003-FE9D0183F8D8}</Project>
+      <Name>autsql</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

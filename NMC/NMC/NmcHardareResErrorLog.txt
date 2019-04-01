@@ -1,0 +1,15 @@
+Date: Mar 25 2017.
+Time: 14:36:29.
+Line: 1723.
+NmcHardareRes::GetCurPos(...),  "relative pos chk error, pls chk!",  pls chk!.
+
+Date: Mar 25 2017.
+Time: 14:36:29.
+Line: 1723.
+NmcHardareRes::GetCurPos(...),  "relative pos chk error, pls chk!",  pls chk!.
+
+Date: Mar 25 2017.
+Time: 14:36:29.
+Line: 1723.
+NmcHardareRes::GetCurPos(...),  "relative pos chk error, pls chk!",  pls chk!.
+
